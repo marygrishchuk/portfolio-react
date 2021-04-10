@@ -1,0 +1,16 @@
+.homePage {
+    height: 100vh;
+    background-color: #fcddef;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.text {
+    width: 350px;
+    background-color: #f6f3f5;
+}
+
+.photo img {
+    height: 400px;
+}
