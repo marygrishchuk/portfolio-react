@@ -1,0 +1,19 @@
+.projects {
+    background-color: #d7c9f8;
+    min-height: 100vh;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    color: #2d025d;
+    text-transform: capitalize;
+}
+
+.line {
+    width: 80px;
+    border-color: #2d025d;
+    margin-bottom: 50px;
+}

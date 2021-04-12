@@ -8,13 +8,13 @@
 }
 
 .logo {
+    margin-top: 25px;
     transform: rotate(45deg);
     transform-origin: center;
     width: 80px;
     height: 80px;
     background-color: #26584c;
     overflow: hidden;
-    margin-top: 30px;
 }
 
 .logo div {
