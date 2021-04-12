@@ -1,10 +1,10 @@
-// import {applyMiddleware, combineReducers, createStore} from "redux";
-// import thunkMiddleware from "redux-thunk";
-//
-// const rootReducer = combineReducers({
-//
-// })
-//
-// export const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
-//
-// window.store = store
+import {combineReducers, createStore} from "redux";
+import {skillsReducer} from "./skills-reducer";
+
+const rootReducer = combineReducers({
+    skills: skillsReducer,
+})
+
+export const store = createStore(rootReducer);
+
+window.store = store
