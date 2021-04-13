@@ -5,21 +5,25 @@ import counter from "../assets/images/counter.png"
 
 let initialState = {
     projects: [{
+        id: "001",
         projectTitle: "Social Network",
         description: "Designed using React, Redux, TypeScript & redux-thunk to as an independent social network",
         screenshot: socialNetwork,
         url: "https://marygrishchuk.github.io/social-network-ts/#/login"
     }, {
+        id: "002",
         projectTitle: "To-do List App",
         description: "React, Redux, TypeScript and Material-UI have been used in this project to help a user create lists of tasks.",
         screenshot: todoLists,
         url: "https://marygrishchuk.github.io/it-incubator-todolist-ts/"
     }, {
+        id: "003",
         projectTitle: "The Storybook of React components",
         description: "Created with React, TypeScript & StoryBook to display and test each component easily.",
         screenshot: storybook,
         url: "https://marygrishchuk.github.io/it-kamasutra-react-with-storybook/?path=/story/example-introduction--page"
     }, {
+        id: "004",
         projectTitle: "Counter",
         description: "A mini-app based on React, react-redux & TypeScript. And localStorage is used for preloading state.",
         screenshot: counter,

@@ -4,10 +4,10 @@ import s from './Navbar.module.css';
 function Navbar() {
     return (
         <div className={s.navbar}>
-            <a href="">Home</a>
-            <a href="">Skills</a>
-            <a href="">Projects</a>
-            <a href="">Contacts</a>
+            <a href={`${window.location.origin}#home`}>Home</a>
+            <a href={`${window.location.origin}#skills`}>Skills</a>
+            <a href={`${window.location.origin}#projects`}>Projects</a>
+            <a href={`${window.location.origin}#contact-me`}>Contact Me</a>
         </div>
     );
 }

@@ -6,7 +6,7 @@ export const Project = ({project}) => {
         <div className={s.project}>
             <div className={s.screenshot}>
                 <img src={project.screenshot} alt="a project screenshot"/>
-                <a href={project.url} target="_blank">
+                <a href={project.url} target="_blank" rel="noreferrer">
                     <button className={s.btn}>View</button>
                 </a>
             </div>

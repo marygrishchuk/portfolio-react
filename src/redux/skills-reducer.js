@@ -7,17 +7,17 @@ import css from "../assets/images/css.svg"
 
 let initialState = {
     skills: [{
-        skillTitle: "JavaScript", description: "The detailed description of the skill...", logo: js
+        id: "005", skillTitle: "JavaScript", description: "The detailed description of the skill...", logo: js
     }, {
-        skillTitle: "TypeScript", description: "The detailed description of the skill...", logo: ts
+        id: "006", skillTitle: "TypeScript", description: "The detailed description of the skill...", logo: ts
     }, {
-        skillTitle: "React", description: "The detailed description of the skill...", logo: react
+        id: "007", skillTitle: "React", description: "The detailed description of the skill...", logo: react
     }, {
-        skillTitle: "Redux", description: "The detailed description of the skill...", logo: redux
+        id: "008", skillTitle: "Redux", description: "The detailed description of the skill...", logo: redux
     }, {
-        skillTitle: "HTML", description: "The detailed description of the skill...", logo: html
+        id: "009", skillTitle: "HTML", description: "The detailed description of the skill...", logo: html
     }, {
-        skillTitle: "CSS", description: "The detailed description of the skill...", logo: css
+        id: "010", skillTitle: "CSS", description: "The detailed description of the skill...", logo: css
     }]
 }
 

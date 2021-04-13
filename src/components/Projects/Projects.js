@@ -8,11 +8,11 @@ const Projects = () => {
     let projects = useSelector(state => state.projects.projects);
 
     return (
-        <div className={s.projects}>
+        <div className={s.projects} id={"projects"}>
             <h2 className={s.title}>My Projects</h2>
             <hr className={s.line}/>
             <div className={containerStyle.container}>
-                {projects.map(p => <Project project={p}/>)}
+                {projects.map(p => <Project key={p.id} project={p}/>)}
             </div>
         </div>
     );
