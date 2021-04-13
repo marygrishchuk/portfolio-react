@@ -35,7 +35,7 @@ function ContactMe() {
                 <input type="email" placeholder={"E-mail"} className={s.field} value={email} onChange={onEmailInput}/>
                 <textarea className={`${s.field} ${s.textarea}`} placeholder={"Your message"} value={messageText}
                           onChange={onMessageInput}/>
-                <button className={s.btn}>SEND MESSAGE</button>
+                <button className={s.btn}>SEND</button>
             </form>
         </div>
     );
