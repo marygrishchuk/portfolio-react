@@ -1,0 +1,17 @@
+.hireMe {
+    height: 200px;
+    background-color: #090916;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    color: #d8d8f6;
+    font-weight: 300;
+}
+
+.btn {
+    font-weight: 300;
+}
