@@ -9,7 +9,7 @@ import codewars from '../../assets/images/codewars.svg';
 function Footer() {
     return (
         <div className={s.footer}>
-            <h2 className={s.title}>Mary Grishchuk</h2>
+            <h3 className={s.title}>Mary Grishchuk</h3>
             <div className={s.icons}>
                 <a href={"https://github.com/marygrishchuk"} target="_blank" rel="noreferrer">
                     <img src={github} alt="github" className={s.icon}/>
