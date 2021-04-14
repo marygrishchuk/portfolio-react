@@ -26,12 +26,12 @@ function ContactMe() {
     }
 
     let onSubmit = (e) => {
-        e.preventDefault()
-        if (name & email & messageText) {
+        if (name && email && messageText) {
             dispatch(onFormSubmit(name, email, messageText))
         } else {
             setError('All fields are required')
         }
+        e.preventDefault()
     }
 
     return (
@@ -45,7 +45,7 @@ function ContactMe() {
                        onChange={onEmailInput}/>
                 <textarea className={`${s.field} ${s.textarea}`} placeholder={"*Your message"} value={messageText}
                           onChange={onMessageInput}/>
-                <div className={s.error}>{error}</div>
+                {error & <div className={s.error}>{error}</div>}
                 <button className={s.btn}>SEND</button>
             </form>
         </div>
