@@ -7,16 +7,20 @@ import Projects from "./components/Projects/Projects";
 import ContactMe from "./components/ContactMe/ContactMe";
 import HireMe from "./components/HireMe/HireMe";
 import Footer from "./components/Footer/Footer";
+import {useSelector} from "react-redux";
 
 const App = () => {
+
+    let state = useSelector(state => state)
+
     return (
         <div className="App">
             <Header/>
             <HomePage/>
-            <Skills/>
-            <Projects/>
+            <Skills skills={state.skills.skills}/>
+            <Projects projects={state.projects.projects}/>
             <HireMe/>
-            <ContactMe/>
+            <ContactMe contactForm={state.contactForm}/>
             <Footer/>
         </div>
     );

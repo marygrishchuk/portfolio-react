@@ -4,9 +4,7 @@ import {useSelector} from "react-redux";
 import containerStyle from "../../common/styles/Container.module.css"
 import {Project} from "./Project/Project";
 
-const Projects = () => {
-    let projects = useSelector(state => state.projects.projects);
-
+const Projects = ({projects}) => {
     return (
         <div className={s.projects} id={"projects"}>
             <h2 className={s.title}>My Projects</h2>

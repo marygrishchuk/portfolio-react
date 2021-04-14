@@ -1,16 +1,22 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import s from './ContactMe.module.css';
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {onFormSubmit} from "../../redux/contact-form-reducer";
 
-function ContactMe() {
-    let state = useSelector(state => state)
+const ContactMe = ({contactForm}) => {
     let dispatch = useDispatch()
 
-    let [name, setName] = useState(state.contactForm.name)
-    let [email, setEmail] = useState(state.contactForm.email)
-    let [messageText, setMessageText] = useState(state.contactForm.messageText)
+    let [name, setName] = useState(contactForm.name)
+    let [email, setEmail] = useState(contactForm.email)
+    let [messageText, setMessageText] = useState(contactForm.messageText)
     let [error, setError] = useState("")
+
+    useEffect(() => {
+        debugger
+        setName(contactForm.name)
+        setEmail(contactForm.email)
+        setMessageText(contactForm.messageText)
+    }, [contactForm])
 
     let onNameInput = (e) => {
         setName(e.currentTarget.value)

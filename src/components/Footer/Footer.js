@@ -6,7 +6,7 @@ import email from '../../assets/images/email.png';
 import codewars from '../../assets/images/codewars.svg';
 
 
-function Footer() {
+const Footer = () => {
     return (
         <div className={s.footer}>
             <h3 className={s.title}>Mary Grishchuk</h3>

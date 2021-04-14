@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './HireMe.module.css';
 
-function HireMe() {
+const HireMe = () => {
     return (
         <div className={s.hireMe}>
             <h2 className={s.title}>I'd love to take part in your project</h2>
