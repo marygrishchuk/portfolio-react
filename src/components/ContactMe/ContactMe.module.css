@@ -33,12 +33,18 @@
     padding: 0 5px;
     margin: 10px;
     line-height: 1.5;
-    font-size: medium;
-    font-family: 'Roboto';
+    font: medium 'Roboto';
+    color:  white;
 }
 
 .textarea {
     min-height: 150px;
+}
+
+.error {
+    color: red;
+    font: medium 'Roboto';
+    margin: 10px;
 }
 
 .btn {
