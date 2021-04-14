@@ -26,8 +26,8 @@ function ContactMe() {
     }
 
     let onSubmit = (e) => {
-        if (name && email && messageText) {
-            dispatch(onFormSubmit(name, email, messageText))
+        if (name.trim() && email.trim() && messageText.trim()) {
+            dispatch(onFormSubmit(name.trim(), email.trim(), messageText.trim()))
         } else {
             setError('All fields are required')
         }
@@ -45,7 +45,7 @@ function ContactMe() {
                        onChange={onEmailInput}/>
                 <textarea className={`${s.field} ${s.textarea}`} placeholder={"*Your message"} value={messageText}
                           onChange={onMessageInput}/>
-                {error & <div className={s.error}>{error}</div>}
+                {error && <div className={s.error}>{error}</div>}
                 <button className={s.btn}>SEND</button>
             </form>
         </div>
