@@ -1,22 +1,11 @@
 .contactMe {
-    background-color: #090916;
+    background-color: #090;
     min-height: 80vh;
     height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.title {
-    color: #d8d8f6;
-    font-weight: 300;
-}
-
-.line {
-    width: 80px;
-    border-color: #d8d8f6;
-    margin-bottom: 50px;
 }
 
 .form {
@@ -45,8 +34,4 @@
     color: red;
     font: medium 'Roboto';
     margin: 10px;
-}
-
-.btn {
-    font-weight: 300;
 }

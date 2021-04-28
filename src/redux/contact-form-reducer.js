@@ -24,7 +24,6 @@ export const contactFormReducer = (state = initialState, action) => {
 const setFormData = (name, email, messageText) => ({type: SET_FORM_DATA, name, email, messageText})
 
 export const onFormSubmit = (name, email, messageText) => (dispatch) => {
-    debugger
     dispatch(setFormData(name, email, messageText))
     //sending the form data to a server .then().catch()
     console.log("The following data have been sent to the server: ", name, email, messageText)

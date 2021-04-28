@@ -1,20 +1,10 @@
-.hireMe {
-    height: 200px;
-    background-color: #1f1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
-
 .title {
+    font-size: 45px;
     color: #0f0a0a;
-    font-size: 24px;
+    font-weight: 800;
     position: relative;
+    margin: 0 0 15px;
     padding: 0 0 15px;
-    margin: 0;
-    font-weight: 700;
-    line-height: 1.2;
 }
 
 .title::after {
