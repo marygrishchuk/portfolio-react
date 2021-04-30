@@ -1,10 +1,10 @@
 import React from 'react';
 import s from './Footer.module.css';
-import linkedin from '../../assets/images/linkedin.png';
-import github from '../../assets/images/github.png';
-import email from '../../assets/images/email.png';
 import codewars from '../../assets/images/codewars.svg';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faAt } from '@fortawesome/free-solid-svg-icons';
 
 const Footer = () => {
     return (
@@ -12,13 +12,13 @@ const Footer = () => {
             <h3 className={s.title}>Mary Grishchuk</h3>
             <div className={s.icons}>
                 <a href={"https://github.com/marygrishchuk"} target="_blank" rel="noreferrer">
-                    <img src={github} alt="github" className={s.icon}/>
+                    <FontAwesomeIcon icon={faGithub} inverse size={"3x"}/>
                 </a>
                 <a href={"https://www.linkedin.com/in/marygrishchuk/"} target="_blank" rel="noreferrer">
-                    <img src={linkedin} alt="linkedin" className={s.icon}/>
+                    <FontAwesomeIcon icon={faLinkedin} inverse size={"3x"}/>
                 </a>
                 <a href={"mailto: mary.grishchuk1@gmail.com"} target="_blank" rel="noreferrer">
-                    <img src={email} alt="email" className={s.icon}/>
+                    <FontAwesomeIcon icon={faAt} inverse size={"3x"}/>
                 </a>
                 <a href={"https://www.codewars.com/users/marygrishchuk/"} target="_blank" rel="noreferrer">
                     <img src={codewars} alt="codewars" className={s.icon}/>
