@@ -1,0 +1,51 @@
+@import '../../common/styles/sass/variables';
+@import '../../common/styles/sass/mixins';
+
+.homePage {
+    height: fit-content;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    @media screen and (max-width: 767px) {
+        justify-content: center;
+        text-align: center;
+    }
+    .text {
+        width: 350px;
+        min-width: fit-content;
+        & h6 {
+            @include text ($fontFamily, 25px, 500, 1.2, $captionTextColor);
+            margin-bottom: 15px;
+            @media screen and (max-width: 767px) {
+                font-size: 18px;
+            }
+        }
+        & h1 {
+            @include text ($fontFamily, 90px, 700, 1.2, $captionTextColor);
+            margin: 0 0 15px;
+            @media screen and (max-width: 767px) {
+                font-size: 45px;
+            }
+        }
+        & h2 {
+            @include text ($fontFamily, 38px, 500, 1.2, $descriptionTextColor);
+            @media screen and (max-width: 767px) {
+                font-size: 22px;
+            }
+        }
+    }
+    .photo {
+        position: relative;
+        box-shadow: rgba(0,0,0,0.25) 0 25px 50px -12px;
+        background: $bGFirstColor;
+        padding: 10px;
+        & img {
+            position: relative;
+            vertical-align: middle;
+            border-style: none;
+            width: 440px;
+        }
+    }
+}

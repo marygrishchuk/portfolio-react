@@ -1,0 +1,13 @@
+@import './src/common/styles/sass/variables';
+
+.App .chapter:nth-child(odd) {
+    background-color: $bGSecondColor;
+}
+
+.App .chapter:nth-child(even) {
+    background-color: $bGFirstColor;
+}
+
+.chapter {
+    padding: 100px 0;
+}

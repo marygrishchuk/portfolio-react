@@ -1,0 +1,24 @@
+@import '../../common/styles/sass/variables';
+@import '../../common/styles/sass/mixins';
+
+.navbar {
+    border-left: 1px solid rgba(15,10,10,0.1);
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    & a {
+        @include text ($fontFamily, 14px, 700, 70px, $captionTextColor);
+        text-transform: uppercase;
+        letter-spacing: 0.05rem;
+        cursor: pointer;
+        text-decoration: none;
+        background-color: transparent;
+        color: #0f0a0a;
+        padding: 0 20px;
+        border-right: 1px solid rgba(15,10,10,0.1);
+    }
+    & a:active, a:hover {
+        color: $primaryColor;
+    }
+}

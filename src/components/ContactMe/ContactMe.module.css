@@ -1,5 +1,4 @@
 .contactMe {
-    background-color: #090;
     min-height: 80vh;
     height: fit-content;
     display: flex;
@@ -18,12 +17,10 @@
 .field {
     width: 550px;
     max-width: 80vw;
-    background-color: #495057;
     padding: 0 5px;
     margin: 10px;
     line-height: 1.5;
     font: medium 'Roboto';
-    color:  white;
 }
 
 .textarea {

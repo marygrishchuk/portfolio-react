@@ -1,0 +1,20 @@
+@import '../../styles/sass/variables';
+@import '../../styles/sass/mixins';
+
+.title {
+    @include text ($fontFamily, 45px, 800, 1.2, $captionTextColor);
+    position: relative;
+    margin: 0 0 15px;
+    padding: 0 0 15px;
+    &::after {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 3px;
+        background: $primaryColor;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+}

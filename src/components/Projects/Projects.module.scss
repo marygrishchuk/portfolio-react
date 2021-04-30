@@ -1,7 +1,10 @@
-.skills {
+.projects {
     min-height: 100vh;
     height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media screen and (max-width: 767px) {
+        justify-content: center;
+    }
 }
