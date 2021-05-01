@@ -2,6 +2,7 @@
 @import '../../common/styles/sass/mixins';
 
 .homePage {
+    position: relative;
     height: fit-content;
     min-height: 100vh;
     display: flex;
@@ -12,9 +13,21 @@
         justify-content: center;
         text-align: center;
     }
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        right: 0;
+        width: 40%;
+        background: $primaryColor;
+        @media (max-width: 991px) {
+            display: none;
+        }
+    }
     .text {
-        width: 350px;
-        min-width: fit-content;
+        width: 400px;
+        min-height: fit-content;
         & h6 {
             @include text ($fontFamily, 25px, 500, 1.2, $captionTextColor);
             margin-bottom: 15px;
@@ -41,6 +54,7 @@
         box-shadow: rgba(0,0,0,0.25) 0 25px 50px -12px;
         background: $bGFirstColor;
         padding: 10px;
+        z-index: 1;
         & img {
             position: relative;
             vertical-align: middle;

@@ -1,4 +1,4 @@
-import s from "./Skill.module.css";
+import s from "./Skill.module.scss";
 import React from "react";
 
 export const Skill = ({skill}) => {
@@ -8,8 +8,10 @@ export const Skill = ({skill}) => {
                 <div style={{backgroundImage: `url(${skill.logo})`}}>
                 </div>
             </div>
-            <h3 className={s.skillTitle}>{skill.skillTitle}</h3>
-            <div className={s.description}>{skill.description}</div>
+            <div className={s.skillInfo}>
+                <h5 className={s.skillTitle}>{skill.skillTitle}</h5>
+                <p className={s.description}>{skill.description}</p>
+            </div>
         </div>
     );
 }

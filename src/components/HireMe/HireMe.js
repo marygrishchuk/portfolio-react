@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './HireMe.module.css';
+import s from './HireMe.module.scss';
 import '../../App.scss';
 import commonStyle from '../../common/styles/Button.module.scss'
 

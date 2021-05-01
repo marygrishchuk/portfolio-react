@@ -4,6 +4,7 @@
 .title {
     @include text ($fontFamily, 45px, 800, 1.2, $captionTextColor);
     position: relative;
+    z-index: 1;
     margin: 0 0 15px;
     padding: 0 0 15px;
     &::after {

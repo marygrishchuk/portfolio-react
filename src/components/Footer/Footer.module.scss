@@ -1,0 +1,45 @@
+@import '../../common/styles/sass/mixins.scss';
+@import '../../common/styles/sass/variables.scss';
+
+.footer {
+  padding: 12px 0;
+  height: fit-content;
+  background-color: $captionTextColor;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  @media screen and (max-width: 627px) {
+    flex-direction: column;
+  }
+
+  .icons {
+    width: 20%;
+    min-width: fit-content;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    .icon {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  .title {
+    @include text($fontFamily, 1.25rem, 600, 1.2, $bGFirstColor);
+    margin: 0;
+  }
+
+  p {
+    margin: 0 10px 0;
+    @include text($fontFamily, 14px, 400, 1.7, $bGFirstColor);
+  }
+}
+
+
+
+
+

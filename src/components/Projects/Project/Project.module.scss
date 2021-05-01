@@ -2,54 +2,87 @@
 @import '../../../common/styles/sass/variables.scss';
 
 .container {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+  @media (min-width: 992px) {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+
+  .screenshot {
+    box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -12px;
+    height: 300px;
+    background: center no-repeat;
+    background-size: cover;
     position: relative;
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-top: 1rem !important;
-    margin-bottom: 1rem !important;
-    @media (min-width: 992px) {
-            -ms-flex: 0 0 33.333333%;
-            flex: 0 0 33.333333%;
-            max-width: 33.333333%;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      top: auto;
+      left: 0;
+      right: 0;
+      height: 0;
+      width: 100%;
+      transition: ease all 0.35s;
+      background: $primaryColor;
+      opacity: 0.8;
     }
-    .screenshot {
-        height: 300px;
-        background: center no-repeat;
-        background-size: cover;
-        position: relative;
-        overflow: hidden;
-        .btn {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-        }
+
+    &:hover {
+      &::after {
+        height: 100%;
+        top: 0;
+        bottom: auto;
+      }
     }
-    .infoBlock {
-        padding: 20px;
-        margin: -30px 10px 0;
-        box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -12px;
-        position: relative;
-        background: #fff;
-        .projectTitle {
-            margin-bottom: 15px;
-            margin-top: 0;
-            & a {
-                @include text ($fontFamily, 18px, 600, 1.7, $captionTextColor);
-                text-decoration: none;
-                background-color: transparent;
-            }
-        }
-        .description {
-            @include text ($fontFamily, 16px, 400, 1.7, $descriptionTextColor);
-            display: -webkit-box;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            -webkit-box-orient: vertical;
-            margin: 0 0 12px;
-        }
+
+    .btn {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: $bGFirstColor;
+      color: $primaryColor;
+
+      &:hover {
+        color: $bGFirstColor;
+      }
     }
+  }
+
+  .infoBlock {
+    padding: 20px;
+    margin: -30px 10px 0;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -12px;
+    position: relative;
+    background: #fff;
+
+    .projectTitle {
+      margin-bottom: 15px;
+      margin-top: 0;
+      a {
+        @include text($fontFamily, 18px, 600, 1.7, $captionTextColor);
+        text-decoration: none;
+        background-color: transparent;
+      }
+    }
+
+    .description {
+      @include text($fontFamily, 16px, 400, 1.7, $descriptionTextColor);
+      display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
+      margin: 0 0 12px;
+    }
+  }
 }
