@@ -4,7 +4,7 @@ import photo from '../../assets/images/photo.jpg'
 
 function HomePage() {
     return (
-        <div className={`${s.homePage} chapter`} id={"home"}>
+        <div className={`chapter ${s.homePage}`} id={"home"}>
             <div className={s.text}>
                 <h6>Hi There! I'm</h6>
                 <h1>Mary Grishchuk</h1>

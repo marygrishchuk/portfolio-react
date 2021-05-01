@@ -4,10 +4,10 @@ import s from './Navbar.module.scss';
 function Navbar() {
     return (
         <div className={s.navbar}>
-            <a href={`${window.location.origin}#home`}>Home</a>
-            <a href={`${window.location.origin}#skills`}>Skills</a>
-            <a href={`${window.location.origin}#projects`}>Projects</a>
-            <a href={`${window.location.origin}#contact-me`}>Contact Me</a>
+            <a href={`#home`}>Home</a>
+            <a href={`#skills`}>Skills</a>
+            <a href={`#projects`}>Projects</a>
+            <a href={`#contact-me`}>Contact Me</a>
         </div>
     );
 }
