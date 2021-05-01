@@ -1,60 +1,82 @@
-import React, {useEffect, useState} from 'react';
-import s from './ContactMe.module.css';
+import React from 'react';
+import s from './ContactMe.module.scss';
 import {useDispatch} from "react-redux";
 import {onFormSubmit} from "../../redux/contact-form-reducer";
 import {Title} from "../../common/components/Title/Title";
 import '../../App.scss';
 import commonStyle from "../../common/styles/Button.module.scss";
+import {useFormik} from "formik";
 
-const ContactMe = ({contactForm}) => {
+const ContactMe = () => {
     let dispatch = useDispatch()
 
-    let [name, setName] = useState(contactForm.name)
-    let [email, setEmail] = useState(contactForm.email)
-    let [messageText, setMessageText] = useState(contactForm.messageText)
-    let [error, setError] = useState("")
-
-    useEffect(() => {
-        debugger
-        setName(contactForm.name)
-        setEmail(contactForm.email)
-        setMessageText(contactForm.messageText)
-    }, [contactForm])
-
-    let onNameInput = (e) => {
-        setName(e.currentTarget.value.trim())
-        setError("")
-    }
-    let onEmailInput = (e) => {
-        setEmail(e.currentTarget.value.trim())
-        setError("")
-    }
-    let onMessageInput = (e) => {
-        setMessageText(e.currentTarget.value.trim())
-        setError("")
-    }
-
-    let onSubmit = (e) => {
-        if (name && email && messageText) {
-            dispatch(onFormSubmit(name, email, messageText))
-        } else {
-            setError('All fields are required')
-        }
-        e.preventDefault()
-    }
+    const formik = useFormik({
+        initialValues: {
+            name: '',
+            email: '',
+            messageText: ''
+        },
+        validate: (values) => {
+            const errors = {};
+            if (!values.name) {
+                errors.name = 'Name is required';
+            }
+            if (!values.email) {
+                errors.email = 'Email is required';
+            } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+                errors.email = 'Invalid email address';
+            }
+            if (!values.messageText) {
+                errors.messageText = 'Message is required';
+            }
+            return errors;
+        },
+        onSubmit: values => {
+            dispatch(onFormSubmit(values))
+            formik.resetForm()
+        },
+    })
 
     return (
         <div className={`${s.contactMe} chapter`} id={"contact-me"}>
             <Title text={"Contact Me"}/>
-            <form onSubmit={onSubmit} className={s.form}>
-                <input type="text" placeholder={"*Name"} className={s.field} value={name} onChange={onNameInput}/>
+            <form onSubmit={formik.handleSubmit} className={s.form}>
+                <div className={s.formGroup}>
+                    <input
+                        className={s.field}
+                        type="text"
+                        {...formik.getFieldProps('name')}
+                    />
+                    <label className={s.formLabel}>*Name</label>
 
-                <input type="email" placeholder={"*E-mail"} className={s.field} value={email}
-                       onChange={onEmailInput}/>
-                <textarea className={`${s.field} ${s.textarea}`} placeholder={"*Your message"} value={messageText}
-                          onChange={onMessageInput}/>
-                {error && <div className={s.error}>{error}</div>}
-                <button className={commonStyle.btn}>Send</button>
+                    {formik.touched.name && formik.errors.name ? (
+                        <div className={s.error}>{formik.errors.name}</div>
+                    ) : null}
+                </div>
+                <div className={s.formGroup}>
+                    <input
+                        className={s.field}
+                        type="email"
+                        {...formik.getFieldProps('email')}
+                    />
+                    <label className={s.formLabel}>*E-mail</label>
+
+                    {formik.touched.email && formik.errors.email ? (
+                        <div className={s.error}>{formik.errors.email}</div>
+                    ) : null}
+                </div>
+                <div className={s.formGroup}>
+                    <textarea
+                        className={`${s.field} ${s.textarea}`}
+                        {...formik.getFieldProps('messageText')}
+                    />
+                    <label className={s.formLabel}>*Message</label>
+
+                    {formik.touched.messageText && formik.errors.messageText ? (
+                        <div className={s.error}>{formik.errors.messageText}</div>
+                    ) : null}
+                </div>
+                <button className={commonStyle.btn} type="submit">Send</button>
             </form>
         </div>
     );

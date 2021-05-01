@@ -1,0 +1,87 @@
+@import '../../common/styles/sass/mixins';
+@import '../../common/styles/sass/variables';
+
+.contactMe {
+  min-height: 80vh;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .form {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media screen and (max-width: 1000px) {
+      width: 80%;
+    }
+
+    .formGroup {
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+
+      .field {
+        width: 100%;
+        max-width: 80vw;
+        padding: .900rem .75rem .375rem;
+        margin: 10px 0;
+        border-radius: 0;
+        border: 1px solid rgba(15, 10, 10, 0.5);
+        height: 40px;
+        box-sizing: border-box;
+        box-shadow: none !important;
+        @include text($fontFamily, 15px, 400, 1.5, $captionTextColor);
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+      }
+
+      .field:focus {
+        outline: none;
+        border: 1px solid $primaryColor;
+        -webkit-box-shadow: 0 0 0 1000px $primaryColor inset;
+      }
+
+      .textarea {
+        height: 157px;
+        width: 100%;
+        overflow: auto;
+        resize: vertical;
+      }
+
+      .formLabel {
+        top: 10px;
+        @include text($fontFamily, 14px, 400, 1.7, $captionTextColor);
+        left: 10px;
+        position: absolute;
+        margin: 0;
+        padding: 0 10px;
+        pointer-events: none;
+        transition: ease all 0.35s;
+        outline: none;
+      }
+
+      .field:focus + .formLabel {
+        top: 0;
+        left: 10px;
+        font-size: 9px;
+        border-radius: 30px;
+        border: 1px solid rgba(15, 10, 10, 0.5);
+        background: $bGFirstColor;
+      }
+
+      .error {
+        color: red;
+        font: normal $fontFamily;
+      }
+    }
+  }
+}
+
+
+
+

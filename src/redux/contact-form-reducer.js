@@ -23,10 +23,9 @@ export const contactFormReducer = (state = initialState, action) => {
 
 const setFormData = (name, email, messageText) => ({type: SET_FORM_DATA, name, email, messageText})
 
-export const onFormSubmit = (name, email, messageText) => (dispatch) => {
-    dispatch(setFormData(name, email, messageText))
+export const onFormSubmit = (values) => (dispatch) => {
+    dispatch(setFormData(values.name, values.email, values.messageText))
     //sending the form data to a server .then().catch()
-    console.log("The following data have been sent to the server: ", name, email, messageText)
+    console.log("The following data have been sent to the server: ", values.name, values.email, values.messageText)
     alert('Your message has been successfully sent. Please wait for a reply to your email.')
-    dispatch(setFormData("", "", ""))
 }

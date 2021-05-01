@@ -20,7 +20,7 @@ const App = () => {
             <Skills skills={state.skills.skills}/>
             <Projects projects={state.projects.projects}/>
             <HireMe/>
-            <ContactMe contactForm={state.contactForm}/>
+            <ContactMe/>
             <Footer/>
         </div>
     );
