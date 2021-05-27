@@ -3,12 +3,12 @@
 
 .skill {
     background: $bGFirstColor;
-    box-shadow: rgba(0,0,0,0.25) 0px 25px 50px -12px;
+    box-shadow: rgba(0,0,0,0.25) 0 25px 50px -12px;
     padding: 43px 34px;
     position: relative;
     z-index: 1;
     width: 30%;
-    min-width: fit-content;
+    min-height: fit-content;
     margin: 15px 0;
     box-sizing: border-box;
     outline: none;

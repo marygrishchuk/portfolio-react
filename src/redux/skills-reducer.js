@@ -7,17 +7,20 @@ import css from "../assets/images/css.svg"
 
 let initialState = {
     skills: [{
-        id: "005", skillTitle: "JavaScript", description: "The detailed description of the skill...", logo: js
+        id: "005", skillTitle: "JavaScript", description: "Proud to have this essential knowledge.", logo: js
     }, {
-        id: "006", skillTitle: "TypeScript", description: "The detailed description of the skill...", logo: ts
+        id: "006", skillTitle: "TypeScript",
+        description: "Enjoying app development with TypeScript because it helps you avoid bugs so easily.", logo: ts
     }, {
-        id: "007", skillTitle: "React", description: "The detailed description of the skill...", logo: react
+        id: "007", skillTitle: "React", description: "Creating React apps.", logo: react
     }, {
-        id: "008", skillTitle: "Redux", description: "The detailed description of the skill...", logo: redux
+        id: "008", skillTitle: "Redux",
+        description: "Experienced in using Redux in my projects as well as redux-thunk, react-redux, Redux Toolkit & redux-form.",
+        logo: redux
     }, {
-        id: "009", skillTitle: "HTML", description: "The detailed description of the skill...", logo: html
+        id: "009", skillTitle: "HTML/CSS/SaSS", description: "Capable of creating a nicely designed webpages.", logo: html
     }, {
-        id: "010", skillTitle: "CSS", description: "The detailed description of the skill...", logo: css
+        id: "010", skillTitle: "REST API", description: "Making REST API calls with axios.", logo: css
     }]
 }
 
