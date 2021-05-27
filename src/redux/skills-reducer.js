@@ -3,7 +3,7 @@ import ts from "../assets/images/ts.png"
 import react from "../assets/images/react.svg"
 import redux from "../assets/images/redux.png"
 import html from "../assets/images/html.jpg"
-import css from "../assets/images/css.svg"
+import restApi from "../assets/images/rest-api.png"
 
 let initialState = {
     skills: [{
@@ -18,9 +18,9 @@ let initialState = {
         description: "Experienced in using Redux in my projects as well as redux-thunk, react-redux, Redux Toolkit & redux-form.",
         logo: redux
     }, {
-        id: "009", skillTitle: "HTML/CSS/SaSS", description: "Capable of creating a nicely designed webpages.", logo: html
+        id: "009", skillTitle: "HTML/CSS/SaSS", description: "Capable of creating nicely designed webpages.", logo: html
     }, {
-        id: "010", skillTitle: "REST API", description: "Making REST API calls with axios.", logo: css
+        id: "010", skillTitle: "REST API", description: "Making REST API calls with axios.", logo: restApi
     }]
 }
 
