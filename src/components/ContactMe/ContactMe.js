@@ -5,9 +5,10 @@ import {onFormSubmit} from "../../redux/contact-form-reducer";
 import {Title} from "../../common/components/Title/Title";
 import '../../App.scss';
 import commonStyle from "../../common/styles/Button.module.scss";
+import notificationStyle from "../../common/styles/error.module.scss";
 import {useFormik} from "formik";
 
-const ContactMe = () => {
+const ContactMe = ({resultInfo}) => {
     let dispatch = useDispatch()
 
     const formik = useFormik({
@@ -77,6 +78,9 @@ const ContactMe = () => {
                     ) : null}
                 </div>
                 <button className={commonStyle.btn} type="submit">Send</button>
+                {resultInfo && <div className={resultInfo === 'Failure to send.'
+                    ? notificationStyle.error
+                    : `${notificationStyle.error} ${notificationStyle.success}`}>{resultInfo}</div>}
             </form>
         </div>
     );
