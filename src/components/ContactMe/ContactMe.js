@@ -1,21 +1,21 @@
 import React from 'react';
 import s from './ContactMe.module.scss';
 import {useDispatch} from "react-redux";
-import {onFormSubmit} from "../../redux/contact-form-reducer";
+import {onFormSubmit, STATUSES} from "../../redux/contact-form-reducer";
 import {Title} from "../../common/components/Title/Title";
 import '../../App.scss';
 import commonStyle from "../../common/styles/Button.module.scss";
 import notificationStyle from "../../common/styles/error.module.scss";
 import {useFormik} from "formik";
 
-const ContactMe = ({resultInfo}) => {
+const ContactMe = ({contactFormData}) => {
     let dispatch = useDispatch()
 
     const formik = useFormik({
         initialValues: {
             name: '',
             email: '',
-            messageText: ''
+            messageText: '',
         },
         validate: (values) => {
             const errors = {};
@@ -77,10 +77,12 @@ const ContactMe = ({resultInfo}) => {
                         <div className={s.error}>{formik.errors.messageText}</div>
                     ) : null}
                 </div>
-                <button className={commonStyle.btn} type="submit">Send</button>
-                {resultInfo && <div className={resultInfo === 'Failure to send.'
+                <button className={commonStyle.btn} type="submit"
+                        disabled={contactFormData.requestStatus === STATUSES.LOADING}>Send
+                </button>
+                {contactFormData.resultInfo && <div className={contactFormData.requestStatus === STATUSES.FAILED
                     ? notificationStyle.error
-                    : `${notificationStyle.error} ${notificationStyle.success}`}>{resultInfo}</div>}
+                    : `${notificationStyle.error} ${notificationStyle.success}`}>{contactFormData.resultInfo}</div>}
             </form>
         </div>
     );
